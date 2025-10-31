@@ -1,0 +1,20 @@
+
+# Paths (reviewers: adjust these to your local paths)
+assets_root: ./data/assets                # EHRSHOT assets directory (contains splits/ and benchmark/)
+sqlite_path: ./data/omop_db.sqlite3       # SQLite DB built from raw OMOP tables
+
+# General
+visit_anchor: earliest                    # earliest | latest
+task: acute_mi                            # los | readmission | pancreatic_cancer | acute_mi
+seed: 42
+
+# MoA LLM settings
+moa:
+  model_id: Qwen/Qwen2.5-32B-Instruct
+  max_context: 7500
+  max_new_tokens: 512
+  temperature: 0.2
+  top_p: 0.9
+  repetition_penalty: 1.05
+  load_in_8bit: false
+  cache_dir: ./hf_cache
